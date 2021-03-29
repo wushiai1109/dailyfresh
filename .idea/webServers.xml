@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="83197868-d468-44ee-aded-89c244a974e0" name="wushiai" url="http://10.227.8.205:9909">
+        <fileTransfer rootFolder="/data00/home/wushiai/repos" accessType="SFTP" host="10.227.8.205" port="22" sshConfigId="c117f997-59b5-4dc0-8ec1-616fc10aa050" sshConfig="wushiai@10.227.8.205:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -74,8 +74,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {  # Adding this section should work around the issue.
+                'staticfiles': 'django.templatetags.static',
+            },
         },
     },
+
 ]
 
 WSGI_APPLICATION = 'dailyfresh.wsgi.application'
@@ -175,4 +179,4 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
 # 配置登录url地址
-LOGIN_URL='/user/login' # /accounts/login
+LOGIN_URL = '/user/login'  # /accounts/login

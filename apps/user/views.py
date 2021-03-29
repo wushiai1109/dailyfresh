@@ -410,12 +410,12 @@ class AddressView(LoginRequiredMixin, View):
         user = request.user
 
         # 获取用户的默认收货地址
-        # try:
-        #     address = Address.objects.get(user=user, is_default=True) # models.Manager
-        # except Address.DoesNotExist:
-        #     # 不存在默认收货地址
-        #     address = None
-        address = Address.objects.get_default_address(user)
+        try:
+            address = Address.objects.get(user=user, is_default=True)  # models.Manager
+        except Address.DoesNotExist:
+            # 不存在默认收货地址
+            address = None
+        # address = Address.objects.get_default_address(user)
 
         # 使用模板
         return render(request, 'user_center_site.html', {'page': 'address', 'address': address})
@@ -429,7 +429,7 @@ class AddressView(LoginRequiredMixin, View):
         phone = request.POST.get('phone')
 
         # 校验数据
-        if not all([receiver, addr, phone]):
+        if not all([receiver, addr, phone, type]):
             return render(request, 'user_center_site.html', {'errmsg': '数据不完整'})
 
         # 校验手机号
